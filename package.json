@@ -1,0 +1,31 @@
+{
+  "name": "mqtt-broker",
+  "version": "1.0.0",
+  "description": "a boilerplate for gulp with babel and eslint",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "node ./dist/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "babel",
+    "eslint",
+    "esformatter"
+  ],
+  "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^4.1.8",
+    "babel-preset-es2015": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-esformatter": "^5.0.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "mosca": "^1.1.0"
+  }
+}
