@@ -7,7 +7,7 @@ let settings = {
   type: 'mqtt',
   json: false,
   mqtt: require('mqtt'),
-  host: '127.0.0.1',
+  // host: '127.0.0.1',
   port: 1883
 };
 

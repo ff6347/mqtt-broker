@@ -1,10 +1,28 @@
 import * as mqtt from 'mqtt';
+import {cli} from './lib/test-cli';
+const settings = cli();
 
 // required when running on node.js
+// let ip = null;
+// let getip = (val) => {
+//   ip = val;
+// };
 
-var client = mqtt.connect('mqtt:localhost:1883', {
-  clientId: 'node.publish'
+// program.version('0.1.0')
+//   .option('-b, --broker-ip <ip>', 'broker IP to connect to', getip)
+//   .option('p, --port [port]', 'the port to connect to')
+//   .parse(process.argv);
+
+// if (!ip || ip === null) {
+//   console.log(chalk.red('No IP for broker provided'));
+//   console.log(chalk.red('falling back to localhost'));
+//   ip = 'localhost';
+// }
+
+let client = mqtt.connect(`mqtt://${settings.ip}:${settings.port}`, {
+  clientId: 'node.subscribe'
 });
+
 
 client.on('connect', () => {
   console.log('client has connected!');
