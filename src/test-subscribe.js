@@ -1,5 +1,5 @@
-import * as mqtt from 'mqtt';
-import {cli} from './lib/test-cli';
+const mqtt = require('mqtt');
+const {cli} = require('./lib/test-cli');
 const settings = cli();
 // const program = require('commander');
 // const chalk = require('chalk');

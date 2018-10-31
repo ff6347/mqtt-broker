@@ -1,4 +1,5 @@
-import * as mosca from 'mosca';
+const mosca = require('mosca');
+// @ts-ignore
 const chalk = require('chalk');
 
 // const mosca = require('mosca');
@@ -6,6 +7,7 @@ const chalk = require('chalk');
 let settings = {
   type: 'mqtt',
   json: false,
+  // @ts-ignore
   mqtt: require('mqtt'),
   // host: '127.0.0.1',
   port: 1883
@@ -14,6 +16,7 @@ let settings = {
 let server = new mosca.Server(settings);
 server.on('clientConnected', (client) => {
   if (client !== undefined) {
+    // @ts-ignore
     console.log(`client ${chalk.green(client.id)} connected`);
   }
   // console.log('client -->', client);
@@ -21,12 +24,14 @@ server.on('clientConnected', (client) => {
 
 server.on('clientDisconnecting', (client) => {
   if (client !== undefined) {
+    // @ts-ignore
     console.log(`Client ${chalk.red(client.id)} is disconnecting`);
   }
 });
 
 server.on('clientDisconnected', (client) => {
   if (client !== undefined) {
+    // @ts-ignore
     console.log(`Client ${chalk.red(client.id)} has disconnected. Bye bye.`);
   }
 });
@@ -34,9 +39,14 @@ server.on('clientDisconnected', (client) => {
 // fired when a message is received
 server.on('published', (packet, client) => {
   if (client !== undefined) {
+    // @ts-ignore
     console.log(`Client ${chalk.green(client.id)} published a message
-      on topic ${chalk.blue(packet.topic)}
-      content ${chalk.blue(packet.payload.toString('utf8'))}`);
+      on topic ${chalk.
+  // @ts-ignore
+    blue(packet.topic)}
+      content ${chalk.
+  // @ts-ignore
+    blue(packet.payload.toString('utf8'))}`);
   }
 // console.log(packet);
 // console.log('Received %s from %s', packet.payload, client.id);
@@ -45,6 +55,7 @@ server.on('published', (packet, client) => {
 
 server.on('unsubscribed', (topic, client) => {
   if (client !== undefined) {
+    // @ts-ignore
     console.log(`Client ${chalk.red(client.id)} unsubscribed from ${chalk.blue(topic)}`);
   }
 // console.log(packet);
@@ -54,6 +65,7 @@ server.on('unsubscribed', (topic, client) => {
 
 server.on('subscribed', (topic, client) => {
   if (client !== undefined) {
+    // @ts-ignore
     console.log(`Client ${chalk.green(client.id)} subscribed to ${chalk.blue(topic)}`);
   }
 // console.log(packet);
@@ -63,5 +75,6 @@ server.on('subscribed', (topic, client) => {
 
 // fired when the mqtt server is ready
 server.on('ready', () => {
+  // @ts-ignore
   console.log(chalk.bold.black.bgGreen('Mosca server is up and running'));
 });

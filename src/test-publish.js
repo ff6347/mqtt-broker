@@ -1,5 +1,5 @@
-import * as mqtt from 'mqtt';
-import {cli} from './lib/test-cli';
+const mqtt = require('mqtt');
+const {cli} = require('./lib/test-cli');
 const settings = cli();
 
 // required when running on node.js
