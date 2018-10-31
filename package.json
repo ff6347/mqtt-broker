@@ -14,7 +14,7 @@
     "esformatter"
   ],
   "author": "Fabian 'fabiantheblind' Morón Zirfas <fabian.moron.zirfas@gmail.com> (http://fabianmoronzirfas.me)",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.8.0",
